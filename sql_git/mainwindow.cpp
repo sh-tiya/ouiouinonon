@@ -1,13 +1,12 @@
-#include <iostream>
+#include "mainwindow.h"
+#include "./ui_mainwindow.h"
 #include <mariadb/conncpp.hpp>
+#include <iostream>
 using namespace std;
 
-#include "widget.h"
-#include "./ui_widget.h"
-
-Widget::Widget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Widget)
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     string a;
@@ -63,8 +62,7 @@ Widget::Widget(QWidget *parent)
     }
 }
 
-Widget::~Widget()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
-
